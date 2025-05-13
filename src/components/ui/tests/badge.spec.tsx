@@ -1,4 +1,3 @@
-import React from 'react'; // Add this line
 import { render, screen } from '@testing-library/react';
 import { Badge } from '../badge';
 import '@testing-library/jest-dom';

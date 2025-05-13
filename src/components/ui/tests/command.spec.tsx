@@ -13,7 +13,6 @@ import {
   CommandSeparator,
 } from '../command';
 
-// Mock the cmdk dependency
 jest.mock('cmdk', () => {
   const Command = ({
     children,
@@ -95,7 +94,6 @@ jest.mock('cmdk', () => {
   return { Command };
 });
 
-// Mock the Dialog component and other dependencies
 jest.mock('@/components/ui/dialog', () => ({
   Dialog: ({ children, ...props }: { children: React.ReactNode; [key: string]: unknown }) => (
     <div data-testid="dialog" {...props}>
@@ -146,12 +144,10 @@ jest.mock('@/components/ui/dialog', () => ({
   ),
 }));
 
-// Mock the lucide-react SearchIcon
 jest.mock('lucide-react', () => ({
   SearchIcon: () => <div data-testid="search-icon" />,
 }));
 
-// Mock utility functions
 jest.mock('@/lib/utils', () => ({
   cn: (...args: unknown[]) => args.filter(Boolean).join(' '),
 }));
@@ -312,7 +308,6 @@ describe('Command Components', () => {
     });
   });
 
-  // Integration tests
   describe('Command components integration', () => {
     it('renders a complete command pattern', () => {
       render(

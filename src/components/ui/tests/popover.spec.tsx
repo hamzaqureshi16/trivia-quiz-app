@@ -44,8 +44,8 @@ describe('Popover Component', () => {
       </Popover>,
     );
     const trigger = screen.getByText('Open Popover');
-    fireEvent.click(trigger); // Open the popover
-    fireEvent.click(trigger); // Close the popover
+    fireEvent.click(trigger); 
+    fireEvent.click(trigger); 
     expect(screen.queryByText('Popover Content')).not.toBeInTheDocument();
   });
 });

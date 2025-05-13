@@ -10,19 +10,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../Dialog'; // Adjust the import path as needed
+} from '../Dialog';
 
-// Mock the @radix-ui/react-dialog
 jest.mock('@radix-ui/react-dialog', () => {
   const actual = jest.requireActual('@radix-ui/react-dialog');
   return {
     ...actual,
-    // Mock Portal to make it easier to test
     Portal: ({ children }) => <div data-testid="dialog-portal">{children}</div>,
   };
 });
 
-// Mock the lib/utils
 jest.mock('@/lib/utils', () => ({
   cn: (...args) => args.filter(Boolean).join(' '),
 }));
@@ -76,11 +73,9 @@ describe('Dialog Components', () => {
       expect(content).toHaveClass('z-50');
       expect(content).toHaveTextContent('Test Content');
 
-      // Check for close button
       const closeButton = screen.getByRole('button');
       expect(closeButton).toBeInTheDocument();
 
-      // Check for screen reader text
       const srText = screen.getByText('Close');
       expect(srText).toHaveClass('sr-only');
     });
@@ -180,10 +175,8 @@ describe('Dialog Integration Tests', () => {
       </Dialog>,
     );
 
-    // Initial state - content shouldn't be visible
     expect(screen.queryByTestId('dialog-content')).not.toBeInTheDocument();
 
-    // Click trigger to open dialog
     const trigger = screen.getByTestId('dialog-trigger');
     fireEvent.click(trigger);
 
@@ -208,10 +201,8 @@ describe('Dialog Integration Tests', () => {
       </Dialog>,
     );
 
-    // Dialog should be visible initially (defaultOpen)
     expect(screen.getByTestId('dialog-content')).toBeInTheDocument();
 
-    // Click close button
     const closeButton = screen.getByTestId('dialog-close-button');
 
     fireEvent.click(closeButton);
@@ -242,7 +233,6 @@ describe('Dialog Integration Tests', () => {
       </Dialog>,
     );
 
-    // Check all components render correctly
     expect(screen.getByTestId('dialog-title')).toHaveTextContent('Settings');
     expect(screen.getByTestId('dialog-description')).toHaveTextContent(
       'Configure your application settings',
