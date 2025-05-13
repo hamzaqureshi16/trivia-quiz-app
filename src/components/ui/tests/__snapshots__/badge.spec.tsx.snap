@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge component matches snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-all hover:cursor-pointer w-full border-green-600 bg-green-600 text-white"
+    data-slot="badge"
+  >
+    Snapshot
+  </span>
+</DocumentFragment>
+`;

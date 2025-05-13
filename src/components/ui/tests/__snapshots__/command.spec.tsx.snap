@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Command Component matches the snapshot 1`] = `
+<div
+  class="bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md"
+  cmdk-root=""
+  data-slot="command"
+  tabindex="-1"
+>
+  <label
+    cmdk-label=""
+    for="radix-«rb»"
+    id="radix-«ra»"
+    style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;"
+  />
+  <p>
+    Snapshot Command
+  </p>
+</div>
+`;

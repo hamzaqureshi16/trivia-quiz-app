@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover Component matches the snapshot 1`] = `
+<button
+  aria-controls="radix-«r5»"
+  aria-expanded="false"
+  aria-haspopup="dialog"
+  data-slot="popover-trigger"
+  data-state="closed"
+  type="button"
+>
+  Open Popover
+</button>
+`;
